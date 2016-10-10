@@ -137,6 +137,7 @@ public class TemperatureSeriesAnalysis {
             }
         }
         newArray = new double[n];
+        n = 0;
         for (int i = 0; i < tempSeries.length; i++) {
             if (tempArray[i] != (tempValue - 1)) {
                 newArray[n] = tempArray[i];
