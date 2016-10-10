@@ -71,7 +71,7 @@ public class TemperatureSeriesAnalysis {
         if (tempSeries.length < 1) {
             throw new IllegalArgumentException();
         }
-        double minMod = Math.abs(tempSeries[0]);
+        double minMod = Double.MAX_VALUE;
         for (double d : tempSeries) {
             if (Math.abs(d) < minMod) {
                 minMod = d;
@@ -86,12 +86,10 @@ public class TemperatureSeriesAnalysis {
         if (tempSeries.length < 1) {
             throw new IllegalArgumentException();
         }
-        double temp = (tempSeries[0] - tempValue);
+        double temp = Double.MIN_VALUE;
         for (double d : tempSeries) {
             if (Math.abs(d - tempValue) < Math.abs(temp)) {
                 temp = d;
-            } else if (Math.abs(d - tempValue) == Math.abs(temp)) {
-                temp = Math.abs(d);
             }
         }
         return temp;

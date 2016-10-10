@@ -271,9 +271,9 @@ public class TemperatureSeriesAnalysisTest {
     @Test
     public void testFindTempsGreaterThanWithOneElementArray() {
         // setup input data and expected result
-        double[] temperatureSeries = {-1.0};
+        double[] temperatureSeries = {1.0};
         TemperatureSeriesAnalysis seriesAnalysis = new TemperatureSeriesAnalysis(temperatureSeries);
-        double [] expResult = {-1.0};
+        double [] expResult = {1.0};
 
         // call tested method
         double [] actualResult = seriesAnalysis.findTempsGreaterThan(0.0);
