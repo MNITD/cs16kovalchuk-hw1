@@ -86,9 +86,9 @@ public class TemperatureSeriesAnalysis {
         if (tempSeries.length < 1) {
             throw new IllegalArgumentException();
         }
-        double temp = Double.MIN_VALUE;
+        double temp = Double.MAX_VALUE;
         for (double d : tempSeries) {
-            if (Math.abs(d - tempValue) < Math.abs(temp)) {
+            if (Math.abs(d - tempValue) < Math.abs(temp - tempValue)) {
                 temp = d;
             }
         }
